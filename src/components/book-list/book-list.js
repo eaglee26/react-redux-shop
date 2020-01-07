@@ -66,4 +66,4 @@ const mapDispatchToProps = (dispatch, { bookstoreService }) => {
 export default compose(
     withBookStoreService(),
     connect(mapStateToProps, mapDispatchToProps)
-)(BookListContainer)
+)(BookListContainer);
