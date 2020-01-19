@@ -11,7 +11,6 @@ const enhancer = (createStore) => (...args) => {
                 type: action
             })
         }
-
         return originalDispatch(action);
     };
 
