@@ -2,7 +2,7 @@ import { createStore, compose } from 'redux';
 
 import reducer from './reducers';
 
-const logEnchancer = (createStore) => (...args) => {
+const logEnhancer = (createStore) => (...args) => {
     const store = createStore(...args);
     const originalDispatch = store.dispatch;
     store.dispatch = (action) => {
@@ -13,7 +13,7 @@ const logEnchancer = (createStore) => (...args) => {
     return store;
 };
 
-const stringEnchancer = (createStore) => (...args) => {
+const stringEnhancer = (createStore) => (...args) => {
     const store = createStore(...args);
     const originalDispatch = store.dispatch;
     store.dispatch = (action) => {
@@ -31,8 +31,8 @@ const stringEnchancer = (createStore) => (...args) => {
 };
 
 const store = createStore(reducer, compose(
-    stringEnchancer,
-    logEnchancer));
+    stringEnhancer,
+    logEnhancer));
 
 store.dispatch('HELLO_WORLD');
 
